@@ -130,7 +130,7 @@ class TypeScriptLanguageServer(SolidLanguageServer):
             raise FileNotFoundError(
                 f"typescript-language-server executable not found at {tsserver_executable_path}, something went wrong with the installation."
             )
-        return [tsserver_executable_path, "--stdio"]
+        return [tsserver_executable_path, "--stdio", "--log-level", "2"]
 
     @staticmethod
     def _get_initialize_params(repository_absolute_path: str) -> InitializeParams:
