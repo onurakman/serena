@@ -77,6 +77,6 @@ class PromptFactory(PromptFactoryBase):
         return self._get_prompt_list('{prompt_list_name}')
 """
     os.makedirs(os.path.dirname(target_module_path), exist_ok=True)
-    with open(target_module_path, "w", encoding="utf-8-sig") as f:
+    with open(target_module_path, "w", encoding="utf-8") as f:
         f.write(generated_code)
     log.info(f"Prompt factory generated successfully in {target_module_path}")

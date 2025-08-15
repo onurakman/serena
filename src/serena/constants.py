@@ -25,7 +25,7 @@ INTERNAL_MODE_YAMLS_DIR = str(_serena_pkg_path / "resources" / "config" / "inter
 SERENA_DASHBOARD_DIR = str(_serena_pkg_path / "resources" / "dashboard")
 SERENA_ICON_DIR = str(_serena_pkg_path / "resources" / "icons")
 
-DEFAULT_ENCODING = "utf-8-sig"
+DEFAULT_ENCODING = "utf-8"
 DEFAULT_CONTEXT = "desktop-app"
 DEFAULT_MODES = ("interactive", "editing")
 

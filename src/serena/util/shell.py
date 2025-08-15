@@ -35,7 +35,7 @@ def execute_shell_command(command: str, cwd: str | None = None, capture_stderr: 
         stderr=subprocess.PIPE if capture_stderr else None,
         creationflags=subprocess.CREATE_NO_WINDOW if is_windows else 0,  # type: ignore
         text=True,
-        encoding="utf-8-sig",
+        encoding="utf-8",
         errors="replace",
         cwd=cwd,
         **subprocess_kwargs(),
@@ -45,7 +45,7 @@ def execute_shell_command(command: str, cwd: str | None = None, capture_stderr: 
     return ShellCommandResult(stdout=stdout, stderr=stderr, return_code=process.returncode, cwd=cwd)
 
 
-def subprocess_check_output(args: list[str], encoding: str = "utf-8-sig", strip: bool = True, timeout: float | None = None) -> str:
+def subprocess_check_output(args: list[str], encoding: str = "utf-8", strip: bool = True, timeout: float | None = None) -> str:
     output = subprocess.check_output(args, stdin=subprocess.DEVNULL, stderr=subprocess.PIPE, timeout=timeout, env=os.environ.copy(), **subprocess_kwargs()).decode(encoding)  # type: ignore
     if strip:
         output = output.strip()

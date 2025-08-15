@@ -259,7 +259,7 @@ class ProjectConfig(ToolInclusionDefinition, ToStringMixin):
                 return cls.autogenerate(project_root)
             else:
                 raise FileNotFoundError(f"Project configuration file not found: {yaml_path}")
-        with open(yaml_path, encoding="utf-8-sig") as f:
+        with open(yaml_path, encoding="utf-8") as f:
             yaml_data = yaml.safe_load(f)
         if "project_name" not in yaml_data:
             yaml_data["project_name"] = project_root.name
@@ -474,11 +474,11 @@ class SerenaConfig(ToolInclusionDefinition, ToStringMixin):
         """
         log.info(f"Found legacy project configuration file {path}, migrating to in-project configuration.")
         try:
-            with open(path, encoding="utf-8-sig") as f:
+            with open(path, encoding="utf-8") as f:
                 project_config_data = yaml.safe_load(f)
             if "project_name" not in project_config_data:
                 project_name = path.stem
-                with open(path, "a", encoding="utf-8-sig") as f:
+                with open(path, "a", encoding="utf-8") as f:
                     f.write(f"\nproject_name: {project_name}")
             project_root = project_config_data["project_root"]
             shutil.move(str(path), str(Path(project_root) / ProjectConfig.rel_path_to_project_yml()))
