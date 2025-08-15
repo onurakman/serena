@@ -95,13 +95,13 @@ class TypeScriptLanguageServer(SolidLanguageServer):
                 RuntimeDependency(
                     id="typescript",
                     description="typescript package",
-                    command=["npm", "install", "--prefix", "./", "typescript@5.5.4"],
+                    command=["npm", "install", "--prefix", "./", "typescript@5.9.2"],
                     platform_id="any",
                 ),
                 RuntimeDependency(
                     id="typescript-language-server",
                     description="typescript-language-server package",
-                    command=["npm", "install", "--prefix", "./", "typescript-language-server@4.3.3"],
+                    command=["npm", "install", "--prefix", "./", "typescript-language-server@4.4.0"],
                     platform_id="any",
                 ),
             ]
