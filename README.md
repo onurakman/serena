@@ -95,34 +95,30 @@ complex projects! So not only is it free and open-source, it frequently achieves
 than existing solutions that charge a premium.
 
 Language servers provide support for a wide range of programming languages.
-With Serena, we provide
+With Serena, we provide direct, out-of-the-box support for:
 
-* direct, out-of-the-box support for:
   * Python
   * TypeScript/Javascript
   * PHP (uses Intelephense LSP; set `INTELEPHENSE_LICENSE_KEY` environment variable for premium features)
   * Go (requires installation of gopls)
   * Rust (requires [rustup](https://rustup.rs/) - uses rust-analyzer from your toolchain)
+  * C/C++ (you may experience issues with finding references, we are working on it)
+  * Zig (requires installation of ZLS - Zig Language Server)
   * C#
   * Ruby
   * Swift
+  * Kotlin (uses the pre-alpha [official kotlin LS](https://github.com/Kotlin/kotlin-lsp), some issues may appear)
   * Java (_Note_: startup is slow, initial startup especially so. There may be issues with java on macos and linux, we are working on it.)
-  * Elixir (Requires NextLS and Elixir install; **Windows not supported**)
   * Clojure
+  * Dart
   * Bash
-  * C/C++ (You may experience issues with finding references, we are working on it)
-  * Zig (requires installation of ZLS - Zig Language Server)
   * Lua (automatically downloads lua-language-server if not installed)
   * Nix (requires nixd installation)
-  * Dart
-* indirect support (may require some code changes/manual installation) for:
-  * Kotlin (untested)
+  * Elixir (requires installation of NextLS and Elixir; **Windows not supported**)
+  * Erlang (requires installation of beam and [erlang_ls](https://github.com/erlang-ls/erlang_ls), experimental, might be slow or hang)
 
-   These languages are supported by the language server library, but
-   we did not explicitly test whether the support for these languages actually works flawlessly.
-
-Further languages can, in principle, easily be supported by providing a shallow adapter for a new language server
-implementation.
+Support for further languages can easily be added by providing a shallow adapter for a new language server implementation,
+see Serena's [memory on that](.serena/memories/adding_new_language_support_guide.md).
 
 ## Table of Contents
 
