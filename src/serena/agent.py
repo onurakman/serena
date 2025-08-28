@@ -431,7 +431,8 @@ class SerenaAgent:
         """
         :return: whether this agent uses language server-based code analysis
         """
-        return not self.serena_config.jetbrains
+        return False
+        # return not self.serena_config.jetbrains
 
     def _activate_project(self, project: Project) -> None:
         log.info(f"Activating {project.project_name} at {project.project_root}")
