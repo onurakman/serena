@@ -365,6 +365,7 @@ class SerenaAgent:
         return template.render(available_tools=self._exposed_tools.tool_names, available_markers=self._exposed_tools.tool_marker_names)
 
     def create_system_prompt(self) -> str:
+        return ""
         available_markers = self._exposed_tools.tool_marker_names
         log.info("Generating system prompt with available_tools=(see exposed tools), available_markers=%s", available_markers)
         system_prompt = self.prompt_factory.create_system_prompt(
